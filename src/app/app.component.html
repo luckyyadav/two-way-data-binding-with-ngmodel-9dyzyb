@@ -1,0 +1,78 @@
+<div class="admin-page">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="co col-md-12">
+          <!--<li *ngFor="let x of countries;let i=index">
+						<div class="form-group" (click)="country(x)">
+							<label>{{x.name}}</label>
+            </div>
+            <input 
+              type="text" 
+              class="form-control"  
+              [name]="'name_'+i" 
+              [(ngModel)]="x.value">-->
+          <!-- or [(ngModel)]="countries[i].value" for that matter 
+          </li>-->
+
+          <!--Approach1-->
+          <!--<table class="table bordered">
+            <thead>
+              <th>Name</th>
+              <th>price</th>
+              <th>id</th>
+              <th>status</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data; let i = index">
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.id }}</td>
+                <td>
+                  <select
+                    class="form-control"
+                    [(ngModel)]="item.CurrStatus"
+                    (change)="updateStatus(item.CurrStatus, item.id)"
+                  >
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejectted</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>-->
+          <!--Approach 2-->
+
+          <table class="table bordered">
+            <thead>
+              <th>Name</th>
+              <th>price</th>
+              <th>id</th>
+              <th>status</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data; let i = index">
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.id }}</td>
+                <td>
+                  <select
+                    class="form-control"
+                    name="a{{ i }}"
+                    [(ngModel)]="data[i]"
+                    (change)="updateStatus(data[i], item)"
+                  >
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejectted</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

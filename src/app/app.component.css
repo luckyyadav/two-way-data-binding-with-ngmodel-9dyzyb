@@ -1,0 +1,10 @@
+.col-centered{
+    margin: 0 auto;
+    float: none;
+    width: 400px;
+}
+.co li{
+    float:left;
+    list-style-type: none;
+    padding:9px;
+}
